@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>TextFix | Formatador de Texto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+    <main class="container">
+    <header>
+    <div class="header-content">
+        <img src="img/logo.png" alt="Logo TextFix featuring a stylized text design in vibrant colors, set against a clean white background, conveying a modern and friendly tone" class="logo" width="200" height="200"/>
+        <!--<h1>TextFix</h1>-->
+        <p>Formate seu texto em segundos. Simples, rápido e prático.</p>
+      </div>
+    </header>
+
+
+    <section class="editor">
+      <textarea id="textInput" placeholder="Cole ou digite seu texto aqui..."></textarea>
+
+      <div class="actions">
+        <button onclick="toUpperCaseText()">MAIÚSCULAS</button>
+        <button onclick="toLowerCaseText()">Minúsculas</button>
+        <button onclick="removeExtraSpaces()">Remover Espaços</button>
+        <button class="danger" onclick="clearText()">Limpar</button>
+      </div>
+
+      <div class="stats">
+        <span><strong>Caracteres:</strong> <span id="charCount">0</span></span>
+        <span><strong>Palavras:</strong> <span id="wordCount">0</span></span>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 • TextFix — Micro SaaS Frontend</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
