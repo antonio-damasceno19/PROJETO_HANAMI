@@ -1,14 +1,14 @@
 # PROJETO_HANAMI
 Formatador de Texto Online
 
-# 🌸 TextFix — Micro SaaS Frontend (Projeto Hanami)
+# TextFix — Micro SaaS Frontend (Projeto Hanami)
 
 TextFix é um **formatador de texto online**, simples e intuitivo, desenvolvido como parte do **Projeto Hanami Frontend**.  
 O foco é oferecer uma experiência rápida para manipulação de texto, seguindo o conceito de **Micro SaaS** e MVP funcional.
 
 ---
 
-## 🎯 Objetivo do Projeto
+## Objetivo do Projeto
 
 Criar um frontend limpo, responsivo e funcional que permita ao usuário:
 
@@ -20,7 +20,7 @@ Este projeto foca **exclusivamente no frontend**, conforme o escopo definido.
 
 ---
 
-## 🧩 Funcionalidades (MVP)
+## Funcionalidades (MVP)
 
 ✔ Converter texto para **MAIÚSCULAS**  
 ✔ Converter texto para **minúsculas**  
@@ -30,7 +30,7 @@ Este projeto foca **exclusivamente no frontend**, conforme o escopo definido.
 ✔ Contador de palavras  
 ✔ Interface responsiva e intuitiva
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **HTML5**
 - **CSS3**
