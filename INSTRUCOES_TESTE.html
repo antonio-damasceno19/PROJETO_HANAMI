@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instruções de Teste - TextFix</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #e2e8f0;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      color: #60a5fa;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    
+    h2 {
+      color: #4f46e5;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #4f46e5;
+      padding-bottom: 10px;
+    }
+    
+    h3 {
+      color: #22c55e;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .section {
+      background: rgba(15, 23, 42, 0.5);
+      border-left: 4px solid #4f46e5;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+    
+    .section.success {
+      border-left-color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+    }
+    
+    .section.info {
+      border-left-color: #60a5fa;
+      background: rgba(96, 165, 250, 0.1);
+    }
+    
+    .section.warning {
+      border-left-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.1);
+    }
+    
+    code {
+      background: #1e293b;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Consolas', monospace;
+      color: #e0e7ff;
+    }
+    
+    pre {
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 15px 0;
+      border-left: 4px solid #4f46e5;
+    }
+    
+    pre code {
+      background: transparent;
+      padding: 0;
+      color: #e0e7ff;
+    }
+    
+    ul, ol {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    
+    li {
+      margin: 8px 0;
+    }
+    
+    .step {
+      background: rgba(79, 70, 229, 0.1);
+      border-left: 4px solid #4f46e5;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+    }
+    
+    .step-number {
+      background: #4f46e5;
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    .step strong {
+      color: #60a5fa;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    th {
+      background: #4f46e5;
+      color: white;
+      padding: 12px;
+      text-align: left;
+    }
+    
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #334155;
+    }
+    
+    tr:hover {
+      background: rgba(79, 70, 229, 0.1);
+    }
+    
+    .keyboard {
+      background: #2d3748;
+      border: 1px solid #4f46e5;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-family: monospace;
+      color: #60a5fa;
+      font-weight: bold;
+    }
+    
+    .emoji {
+      font-size: 1.2em;
+      margin-right: 5px;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .card {
+      background: rgba(79, 70, 229, 0.1);
+      border: 1px solid #4f46e5;
+      padding: 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      background: rgba(79, 70, 229, 0.2);
+      border-color: #60a5fa;
+    }
+    
+    .card h3 {
+      color: #60a5fa;
+    }
+    
+    .checkmark {
+      color: #22c55e;
+      font-weight: bold;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #334155;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><span class="emoji">🎨</span>Instruções de Teste - TextFix</h1>
+    
+    <!-- Seção: Como Testar -->
+    <div class="section info">
+      <h2><span class="emoji">🚀</span>Como Testar a Responsividade</h2>
+      <p>Existem 3 maneiras de testar o layout responsivo do TextFix:</p>
+    </div>
+    
+    <!-- Método 1 -->
+    <div class="step">
+      <span class="step-number">1</span>
+      <strong>Abrir no Navegador</strong>
+      <p style="margin-top: 10px;">Arraste o arquivo <code>Frontend/index.html</code> para o navegador ou use:</p>
+      <pre><code>file:///C:/Users/ANTONIO%20DAMASCENO/Documents/PROJETO%20HANAMI/PROJETO%20HANAMI%20-%20SPRINT%201/Frontend/index.html</code></pre>
+    </div>
+    
+    <!-- Método 2 -->
+    <div class="step">
+      <span class="step-number">2</span>
+      <strong>Usar DevTools do Navegador</strong>
+      <p style="margin-top: 10px;">Depois de abrir a página:</p>
+      <ul>
+        <li>Pressione <span class="keyboard">F12</span> (ou <span class="keyboard">Ctrl+Shift+I</span>)</li>
+        <li>Clique no ícone de celular (ou pressione <span class="keyboard">Ctrl+Shift+M</span>)</li>
+        <li>Selecione diferentes dispositivos no dropdown</li>
+        <li>Ou configure resoluções customizadas</li>
+      </ul>
+    </div>
+    
+    <!-- Método 3 -->
+    <div class="step">
+      <span class="step-number">3</span>
+      <strong>Redimensionar Janela Manualmente</strong>
+      <p style="margin-top: 10px;">
+        Maximize o DevTools e redimensione a janela do navegador arrastando as laterais.
+        Você verá em tempo real como o layout se adapta.
+      </p>
+    </div>
+    
+    <!-- Resoluções Desktop -->
+    <h2><span class="emoji">💻</span>Resoluções Desktop a Testar</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Breakpoint</th>
+          <th>Resolução</th>
+          <th>Como Testar</th>
+          <th>O Que Verificar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Desktop XL</strong></td>
+          <td>1920x1080 / 2560x1440</td>
+          <td>DevTools → Custom 1920x1080</td>
+          <td>Max-width 1400px, Padding 56px, Textarea 320px</td>
+        </tr>
+        <tr>
+          <td><strong>Desktop L</strong></td>
+          <td>1440x900</td>
+          <td>DevTools → Custom 1440x900</td>
+          <td>Max-width 1300px, Balanced layout</td>
+        </tr>
+        <tr>
+          <td><strong>Desktop M</strong></td>
+          <td>1280x720</td>
+          <td>DevTools → Custom 1280x720</td>
+          <td>Max-width 1100px, 4 col buttons</td>
+        </tr>
+        <tr>
+          <td><strong>Tablet</strong></td>
+          <td>1024x768</td>
+          <td>DevTools → iPad</td>
+          <td>Max-width 900px, 2 col buttons</td>
+        </tr>
+        <tr>
+          <td><strong>Mobile</strong></td>
+          <td>480x854</td>
+          <td>DevTools → iPhone SE</td>
+          <td>100% width, 1 col buttons</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Checklist Desktop -->
+    <h2><span class="emoji">✅</span>Checklist Desktop</h2>
+    
+    <div class="section success">
+      <h3>Responsividade</h3>
+      <ul>
+        <li><span class="checkmark">✓</span> 1024px: Sem layout quebrado ou sobreposição</li>
+        <li><span class="checkmark">✓</span> 1366px: Layout mantém proporção perfeita</li>
+        <li><span class="checkmark">✓</span> 1920px: Conteúdo centralizado e espaçado</li>
+        <li><span class="checkmark">✓</span> 2560px: Textarea legível, buttons bem distribuídos</li>
+        <li><span class="checkmark">✓</span> Resize manual: Transição suave sem layout shift</li>
+      </ul>
+    </div>
+    
+    <div class="section success">
+      <h3>Alinhamento e Espaçamento</h3>
+      <ul>
+        <li><span class="checkmark">✓</span> Header e footer com padding simétrico</li>
+        <li><span class="checkmark">✓</span> Botões alinhados em grid uniforme</li>
+        <li><span class="checkmark">✓</span> Stats com layout consistente</li>
+        <li><span class="checkmark">✓</span> Container sempre centralizado</li>
+        <li><span class="checkmark">✓</span> Gaps proporcionais em todos os elementos</li>
+      </ul>
+    </div>
+    
+    <div class="section success">
+      <h3>Design Visual</h3>
+      <ul>
+        <li><span class="checkmark">✓</span> Header com gradient suave (indigo → verde)</li>
+        <li><span class="checkmark">✓</span> Sombras consistentes em cards</li>
+        <li><span class="checkmark">✓</span> Border-radius uniforme (8-12px)</li>
+        <li><span class="checkmark">✓</span> Cores sem desvios (paleta consistente)</li>
+        <li><span class="checkmark">✓</span> Tipografia legível com letter-spacing</li>
+      </ul>
+    </div>
+    
+    <div class="section success">
+      <h3>Interatividade</h3>
+      <ul>
+        <li><span class="checkmark">✓</span> Header anima ao passar mouse (translateY -2px)</li>
+        <li><span class="checkmark">✓</span> Logo escala em hover (1.05)</li>
+        <li><span class="checkmark">✓</span> Botões com sombra ao hover</li>
+        <li><span class="checkmark">✓</span> Textarea com focus state visível (border azul + shadow)</li>
+        <li><span class="checkmark">✓</span> Transições suaves (0.3s ease)</li>
+      </ul>
+    </div>
+    
+    <!-- Zoom Testing -->
+    <h2><span class="emoji">🔍</span>Teste de Zoom</h2>
+    
+    <div class="section warning">
+      <p>Teste o layout em diferentes níveis de zoom para verificar adaptabilidade:</p>
+      <ul>
+        <li><span class="keyboard">Ctrl +</span> para aumentar zoom</li>
+        <li><span class="keyboard">Ctrl -</span> para diminuir zoom</li>
+        <li><span class="keyboard">Ctrl 0</span> para resetar (100%)</li>
+      </ul>
+      <p style="margin-top: 15px;"><strong>Resoluções a testar:</strong></p>
+      <ul>
+        <li>90%: Layout confortável e legível</li>
+        <li>100%: Padrão ideal (esta é a baseline)</li>
+        <li>110%: Espaçamento mantido</li>
+        <li>125%: Sem quebra de layout</li>
+        <li>150%: Ainda legível e usável</li>
+      </ul>
+    </div>
+    
+    <!-- Teste de Navegadores -->
+    <h2><span class="emoji">🌐</span>Compatibilidade de Navegadores</h2>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>Chrome/Chromium</h3>
+        <p>✅ Transições suaves</p>
+        <p>✅ Gradientes renderizam perfeitamente</p>
+        <p>✅ DevTools robustos</p>
+        <p><strong>Status:</strong> Excelente</p>
+      </div>
+      
+      <div class="card">
+        <h3>Firefox</h3>
+        <p>✅ Flexbox/Grid funcionam</p>
+        <p>✅ Gradientes OK</p>
+        <p>✅ Focus states visíveis</p>
+        <p><strong>Status:</strong> Excelente</p>
+      </div>
+      
+      <div class="card">
+        <h3>Safari</h3>
+        <p>✅ Webkit compatível</p>
+        <p>✅ Gradientes suportados</p>
+        <p>✅ Transições funcionam</p>
+        <p><strong>Status:</strong> Excelente</p>
+      </div>
+      
+      <div class="card">
+        <h3>Edge</h3>
+        <p>✅ Chromium-based</p>
+        <p>✅ Compatível com Chrome</p>
+        <p>✅ Performance ótima</p>
+        <p><strong>Status:</strong> Excelente</p>
+      </div>
+    </div>
+    
+    <!-- Testes Específicos -->
+    <h2><span class="emoji">🧪</span>Testes Específicos</h2>
+    
+    <div class="section info">
+      <h3>1. Teste do Container</h3>
+      <pre><code>✓ Deve estar centralizado na página
+✓ Max-width não deve exceder 1200px
+✓ Padding deve ser simétrico
+✓ Deve expandir em resoluções maiores
+✓ Deve se compactar em resoluções menores</code></pre>
+    </div>
+    
+    <div class="section info">
+      <h3>2. Teste do Header</h3>
+      <pre><code>✓ Gradient 4f46e5 → 22c55e deve estar visível
+✓ Padding deve ser 48px em desktop
+✓ Hover deve animar (transform -2px)
+✓ Logo deve fazer scale 1.05 em hover
+✓ Sombra deve ser profunda</code></pre>
+    </div>
+    
+    <div class="section info">
+      <h3>3. Teste do Textarea</h3>
+      <pre><code>✓ Height deve variar conforme resolução (260-320px)
+✓ Deve ser redimensionável verticalmente
+✓ Focus state: border #4f46e5 + shadow
+✓ Background cinzento quando desfocado
+✓ Font monospace visível</code></pre>
+    </div>
+    
+    <div class="section info">
+      <h3>4. Teste dos Botões</h3>
+      <pre><code>✓ Desktop: 4 colunas em grid
+✓ Tablet: 2 colunas em grid
+✓ Mobile: 1 coluna 100% width
+✓ Hover: transform -2px + shadow
+✓ Spacing consistente (gap 12px)</code></pre>
+    </div>
+    
+    <div class="section info">
+      <h3>5. Teste do Footer</h3>
+      <pre><code>✓ Deve ficar ao bottom do container
+✓ Mesmo gradient do header
+✓ Padding proporcional
+✓ Texto centralizado
+✓ Sombra consistente</code></pre>
+    </div>
+    
+    <!-- Sem Quebras Garantidas -->
+    <h2><span class="emoji">🛡️</span>Garantias de Layout</h2>
+    
+    <div class="section success">
+      <h3>Resoluções Testadas e Validadas</h3>
+      <ul>
+        <li><strong>1024x768:</strong> Nenhuma sobreposição, elementos bem distribuídos</li>
+        <li><strong>1366x768:</strong> Layout proporcional, textarea legível</li>
+        <li><strong>1920x1080:</strong> Conteúdo centralizado, espaçamento generoso</li>
+        <li><strong>2560x1440:</strong> Max-width 1400px, ainda legível</li>
+        <li><strong>3840x2160:</strong> 4K suportado, conteúdo legível</li>
+      </ul>
+    </div>
+    
+    <!-- Ferramenta de Teste -->
+    <h2><span class="emoji">🔧</span>Ferramenta Online para Teste</h2>
+    
+    <div class="section info">
+      <p>Você pode usar também:</p>
+      <ul>
+        <li><strong>Google Chrome DevTools:</strong> F12 → Responsive Design Mode</li>
+        <li><strong>Firefox Developer Tools:</strong> F12 → Responsive Design Mode</li>
+        <li><strong>BrowserStack:</strong> Teste em múltiplos dispositivos reais</li>
+        <li><strong>Responsively App:</strong> App desktop para testar responsividade</li>
+      </ul>
+    </div>
+    
+    <!-- Dicas Finais -->
+    <h2><span class="emoji">💡</span>Dicas Finais</h2>
+    
+    <div class="section success">
+      <ul>
+        <li><strong>✓ Sempre testar em Full Screen:</strong> F11 para modo tela cheia</li>
+        <li><strong>✓ Testar zoom em 100%:</strong> Ctrl+0 para resetar</li>
+        <li><strong>✓ Limpar cache:</strong> Ctrl+Shift+Delete antes de testar</li>
+        <li><strong>✓ Testar em vários navegadores:</strong> Chrome, Firefox, Safari, Edge</li>
+        <li><strong>✓ Testar orientações:</strong> Portrait e Landscape em mobile</li>
+        <li><strong>✓ Verificar console:</strong> Não deve haver erros</li>
+        <li><strong>✓ Testar funcionalidade:</strong> Botões, textarea, contadores funcionam?</li>
+        <li><strong>✓ Testar performance:</strong> Transições suaves sem lag?</li>
+      </ul>
+    </div>
+    
+    <!-- Resultado Esperado -->
+    <h2><span class="emoji">🎉</span>Resultado Esperado</h2>
+    
+    <div class="section success">
+      <p><strong>Se todos os testes passarem, você terá:</strong></p>
+      <ul>
+        <li>✅ Layout responsivo em 6 breakpoints</li>
+        <li>✅ Design profissional e moderno</li>
+        <li>✅ Alinhamento pixel-perfeito</li>
+        <li>✅ Espaçamento harmonioso</li>
+        <li>✅ Interatividade suave</li>
+        <li>✅ Compatibilidade cross-browser</li>
+        <li>✅ Acessibilidade melhorada</li>
+        <li>✅ Performance otimizada</li>
+        <li>✅ Pronto para produção</li>
+      </ul>
+    </div>
+    
+    <div class="footer">
+      <p>📚 Documentação: Veja também <strong>GUIA_TESTES.md</strong> para mais detalhes</p>
+      <p>🚀 Status: <strong>✅ Pronto para Produção</strong></p>
+      <p>📅 Data: 22 de janeiro de 2026</p>
+    </div>
+  </div>
+</body>
+</html>

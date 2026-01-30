@@ -3,30 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <title>TextFix | Formatador de Texto</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+  <meta name="description" content="Formate seu texto em segundos. Simples, rápido e prático." />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TextFix" />
+  <meta name="format-detection" content="telephone=no" />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Resource Hints para Otimização -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdn.example.com">
+  
+  <!-- Stylesheet Principal -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  
-    <main class="container">
+  <main class="container">
     <header>
-    <div class="header-content">
-        <img src="img/logo.png" alt="Logo TextFix featuring a stylized text design in vibrant colors, set against a clean white background, conveying a modern and friendly tone" class="logo" width="200" height="200"/>
-        <!--<h1>TextFix</h1>-->
+      <div class="header-content">
+        <img src="img/logo.png" alt="Logo TextFix - Formatador de Texto" class="logo" width="180" height="auto" />
         <p>Formate seu texto em segundos. Simples, rápido e prático.</p>
       </div>
     </header>
 
-
     <section class="editor">
-      <textarea id="textInput" placeholder="Cole ou digite seu texto aqui..."></textarea>
+      <textarea id="textInput" placeholder="Cole ou digite seu texto aqui..." spellcheck="true"></textarea>
 
       <div class="actions">
-        <button onclick="toUpperCaseText()">MAIÚSCULAS</button>
-        <button onclick="toLowerCaseText()">Minúsculas</button>
-        <button onclick="removeExtraSpaces()">Remover Espaços</button>
-        <button class="danger" onclick="clearText()">Limpar</button>
+        <button onclick="toUpperCaseText()" title="Converter para MAIÚSCULAS">MAIÚSCULAS</button>
+        <button onclick="toLowerCaseText()" title="Converter para minúsculas">minúsculas</button>
+        <button onclick="removeExtraSpaces()" title="Remover espaços extras">Remover Espaços</button>
+        <button class="danger" onclick="clearText()" title="Limpar todo o texto">Limpar</button>
       </div>
 
       <div class="stats">
@@ -40,6 +48,57 @@
     </footer>
   </main>
 
-  <script src="script.js"></script>
+  <!-- Modal para Resultados -->
+  <div id="resultModal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Resultado</h2>
+        <button class="modal-close" onclick="closeResultModal()" title="Fechar">✕</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="result-display">
+          <p class="result-label">Seu resultado:</p>
+          <div class="result-text-box">
+            <p id="resultText">Nenhum resultado ainda</p>
+          </div>
+        </div>
+        
+        <div class="result-stats">
+          <div class="stat-item">
+            <span class="stat-label">Caracteres:</span>
+            <span class="stat-value" id="resultCharCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Palavras:</span>
+            <span class="stat-value" id="resultWordCount">0</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn-copy" onclick="copyResultToClipboard()" title="Copiar para área de transferência">
+          📋 Copiar
+        </button>
+        <button class="btn-close" onclick="closeResultModal()" title="Fechar modal">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts de Otimização (Carregamento Progressivo) -->
+  <!-- Lazy Loader: Carrega imagens e componentes sob demanda -->
+  <script src="lazy-loader.js" defer></script>
+  
+  <!-- Modules: Code Splitting com funções modularizadas -->
+  <script src="modules.js" defer></script>
+  
+  <!-- Script Principal: Lógica da aplicação -->
+  <script src="script.js" defer></script>
+  
+  <!-- Inicialização: Coordena carregamento e otimizações -->
+  <script src="init.js" defer></script>
 </body>
 </html>
