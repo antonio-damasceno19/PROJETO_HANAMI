@@ -253,30 +253,14 @@ git push origin main
 
 # 3. Vá para Settings → Pages
 # 4. Selecione "main" branch como source
-# 5. Sua app estará em: https://seu-usuario.github.io/projeto-hanami
+# 5. Sua app estará em: https://github.com/antonio-damasceno19/PROJETO_HANAMI
 
 # Para servir a partir de /Frontend:
 # Mova Frontend/* para a raiz do repositório
 # Ou configure o source para a pasta /docs
 ```
 
-### Opção 2: Netlify (Gratuito)
-
-```bash
-# 1. Instale o Netlify CLI
-npm install -g netlify-cli
-
-# 2. Build a aplicação
-npm run build
-# Ou simplesmente copie a pasta Frontend/
-
-# 3. Deploy
-netlify deploy --prod --dir=Frontend/
-
-# 4. Sua app estará em: https://seu-site.netlify.app
-```
-
-### Opção 3: Vercel (Gratuito)
+### Opção 2: Vercel (Gratuito)
 
 ```bash
 # 1. Instale o Vercel CLI
@@ -286,7 +270,7 @@ npm install -g vercel
 vercel --prod
 
 # Siga as instruções do wizard
-# Sua app estará em: https://seu-site.vercel.app
+# Sua app estará em: https://projetohanami.vercel.app/
 ```
 
 ### Opção 4: Servidor Apache/Nginx
